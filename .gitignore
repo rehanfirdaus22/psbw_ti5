@@ -1,0 +1,13 @@
+# Virtual environment (jangan ikut di-commit, bisa dibuat ulang dari requirements.txt)
+venv/
+.venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# File bawaan editor / sistem
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
