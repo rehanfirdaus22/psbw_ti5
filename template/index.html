@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Beranda{% endblock %}
+
+{% block content %}
+<div class="p4 p-md-5 mb-4 bg-light rounded-3">
+    <h1 class="display-6 fw-bold">Tempat menyewa peralatan dan perlengkapan naik gunung</h1>
+    <p class="lead my-3">Tenda, carrier, kompor, dan alat lainnya dengan harga terjangkau. Tinggal pilih alatnnya, bawa KTP, langsung gaskeun.</p>
+    <a class="btn btn-success" href="{{ url_for('katalog') }}" >Lihat Katalog alat</a>
+  </div>
+
+<h2 class="h5">Coba cek username</h2>
+<p class="text-muted">Tiga contoh di bawah menghasilkan tiga tampilan hasil yang berbeda.</p>
+<ul>
+    <li><a href="{{ url_for('cek_username', username='pendaki_baru') }}">pendaki_baru</a></li>
+    <li><a href="{{ url_for('cek_username', username='rina_hiker') }}">rina_hiker</a></li>
+    <li><a href="{{ url_for('cek_username', username='ab') }}">ab</a></li>
+</ul>
+{% endblock %}
