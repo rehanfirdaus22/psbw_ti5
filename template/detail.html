@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} {{ alat.nama | title }}{% endblock %}
+
+{%block content %}
+<h1 class="h3">{{ alat.nama | title }}</h1>
+<p class="text-muted">{{ alat.deskripsi }}</p>
+
+<table class="table w-auto">
+    <tr><th class="pe-4">Kategori</th><td>{{ alat.kategori | capitalize }}</td>tr>
+    <tr><th>Tarif</th><td>{{ alat.tarif | rupiah }} per hari</td></tr>
+    <tr>
+        <th>status</th>
+        <td>
+            {% if ala.stok >0 %}
+                Tersedia ({{ alat.stok }} unit)
+            {% else %}
+                Sedang disewa
+            {% endif %}
+        </td>
+    </tr>
+</table>
+
+<a class="btn btn-outline-success" href="{{ url_for('katalog') }}">&larr; Kembali ke katalog</a>
+{% endblock %}
