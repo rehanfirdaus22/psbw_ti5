@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Cek Username{% endblock %}
+
+{% block content %}
+
+
+<!-- Tiga kondisi: tidak valid, tersedia sudah dipakai -->
+ {% if not valid %}
+    <div class="alert alert-warning">
+        <strong>{{ username }}</strong> tidak valid. {{ alasan }}
+    </div>
+{% elif tersedia %}
+    <div class="alert alert-success">
+        <strong>{{ username }}</strong> Tersedia dan bisa dipakai untuk mendaftar member.
+    </div>
+{% else %}
+    <div class="alert alert-danger">
+        <strong>{{ username }}</strong> sudah dipakai.
+    <a href="{{ url_for('profil_penyewa', username=username) }}" class="alert-link">Lihat profilnya</a>    
+    </div>
+{% endif %}
+
+<a class="btn btn-outline-success" href="{{ url_for('beranda') }}">&larr; Kembali ke beranda</a>
+{% endblock %}

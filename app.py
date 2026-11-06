@@ -1,4 +1,4 @@
-from flask import Flask, abort, redirect, url_for
+from flask import Flask, abort, redirect, render_template, url_for
 
 app = Flask(__name__)
 
@@ -74,7 +74,7 @@ def katalog():
 
 @app.route("/kontak")
 def kontak():
-    return render_template("kontak.html:")
+    return render_template("kontak.html")
 
 
 @app.route("/alat")
@@ -102,7 +102,7 @@ def cek_username(username):
     )
 
 
-@app.route("/cek/<username>")
+@app.route("/user/username>")
 def profil_penyewa(username):
     u = username.lower()
     valid, alasan = cek_format(username)

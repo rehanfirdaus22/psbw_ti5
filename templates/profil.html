@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Profil {{ username }}{% endblock %}
+
+{% block content %}
+<h1 class="h3">Profil @{{ username }}</h1>
+
+<table class="table w-auto">
+    <tr><th class="pe-4">Nama</th><td>{{ penyewa.nama }}</td></tr>
+    <tr><th>Kota</th><td>{{ penyewa.kota }}</td></tr>
+    <tr><th>Jumlah sewa</th><td>{{ penyewa.jumlah_sewa }}</td></tr>
+    <tr>
+        <th>Label</th>
+        <td>
+            {% if penyewa.jumlah_sewa >5 %}
+            <span class="badge text-bg-success">Member setia</span>
+            {% else %}
+            <span class="badge text-bg-secondary">Penyewa baru</span>
+            {% endif %}
+        </td>
+    </tr>
+</table>
+
+<a class="btn btn-outline-success" href="{{ url_for('beranda') }}">&larr; Kembali ke beranda</a>
+{% endblock %}

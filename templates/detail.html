@@ -6,12 +6,12 @@
 <p class="text-muted">{{ alat.deskripsi }}</p>
 
 <table class="table w-auto">
-    <tr><th class="pe-4">Kategori</th><td>{{ alat.kategori | capitalize }}</td>tr>
+    <tr><th class="pe-4">Kategori</th><td>{{ alat.kategori | capitalize }}</td>
     <tr><th>Tarif</th><td>{{ alat.tarif | rupiah }} per hari</td></tr>
     <tr>
         <th>status</th>
         <td>
-            {% if ala.stok >0 %}
+            {% if alat.stok > 0 %}
                 Tersedia ({{ alat.stok }} unit)
             {% else %}
                 Sedang disewa
