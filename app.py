@@ -102,7 +102,7 @@ def cek_username(username):
     )
 
 
-@app.route("/user/username>")
+@app.route("/user/<username>")
 def profil_penyewa(username):
     u = username.lower()
     valid, alasan = cek_format(username)
